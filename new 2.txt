@@ -1,0 +1,58 @@
+
+时间段	景点/地点	核心活动与推荐体验	避暑贴士与注意事项	交通方式
+​​15:00-16:30​​	弹子石老街	- 参观法国水师兵营旧址（免费开埠历史展）
+- 杜莎夫人蜡像馆（室内空调）或大众书局（四合院书店）
+- 一德堂教堂彩色玻璃窗光影拍摄	- 利用九级坡地连廊遮阴，沿途喷雾降温装置
+- 优先选择SEA LIFE海洋探索中心（室内水族馆）避暑	轨道交通环线至弹子石站，3号出口直达
+​​16:30-18:00​​	开埠遗址公园	- 打卡非遗竹编长廊，拍摄长江索道与渝中半岛同框景
+- 瞰江平台坝坝茶座休息（冰饮+古筝演奏）	- 靠江座位享受江风，公园绿植覆盖率高避免曝晒
+- 步行距离短（约800米），减少高温移动	从弹子石老街沿南滨路步行15分钟
+​​18:00-19:30​​	龙门浩老街	- 星光观景台拍摄轻轨穿行东水门大桥与日落（18:30-19:00黄金时段）
+- 参观美国大使馆旧址或里外巷子记忆馆
+- 邮局咖啡歇脚（复古主题拍照）	- 傍晚温度下降，江风舒适；利用电梯上下减少爬坡
+- 穿防滑鞋，注意台阶安全	从开埠公园沿南滨路西行800米（约15分钟）
+​​19:30-21:00​​	下浩里老街	- 浩阅书店观景台拍摄下浩里全景与东水门大桥亮灯（20:00准时）
+- 逛雾光山亭、艺术杂货店
+- 晚餐推荐猴哥酸菜米线或酒花精酿（露台夜景）	- 夜间灯光投影辅助降温，巷道通风较好
+- 避免拥挤时段，商业气息淡更静谧	从龙门浩顶端过东水门大桥下穿道，步行5分钟
+​​21:00-22:00​​	南滨路夜市（海棠烟雨公园段）	- 彩虹集市体验酸辣粉、串串等地道小吃
+- 滨江酒吧微醺赏两江灯光秀（20:00-22:00）	- 江风凉爽，蚊虫较多需备驱蚊液
+- 末班交通提示：上新街站6号线末班车约23:00	从下浩里3号口出步行直达，或至上新街站乘车
+
+
+
+
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYwKRSSAYTcxeXC7ywqmWQBYUFpsMiVvI"  -H 'Content-Type: application/json'  -X POST -d '{    "contents": [   {  "parts": [   {   "text": "Explain how AI works in a few words"   }   ]  }  ]  }'
+  
+  
+netsh winhttp set proxy proxy-server="http=127.0.0.1:2081"  
+
+netsh winhttp reset proxy
+
+curl -x http://127.0.0.1:2081  "https://www.youtube.com"
+
+
+curl -x http://127.0.0.1:2081  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYwKRSSAYTcxeXC7ywqmWQBYUFpsMiVvI"  -H 'Content-Type: application/json'  -X POST -d '{    "contents": [   {  "parts": [   {   "text": "Explain how AI works in a few words"   }   ]  }  ]  }'
+
+
+
+set ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+set ANTHROPIC_AUTH_TOKEN=99ec0816e3ea430fbafa183956444ce2.uXyZy5eYV20gGyX2
+
+
+
+
+
+Title
+70/60
+MedTime Calculator - Free Medication Schedule & Dose Timing Calculator
+Description
+217/160
+Free medication timing calculator to optimize your pill schedule. Create personalized medication schedules, manage multiple doses, and handle time zone changes while traveling. Perfect for any prescription medication.
+Keywords
+503/100
+medicine time calculator, medicine scheduler, medication scheduler, medication time calculator,medication schedule calculator, pill timing calculator, medication dose calculator, prescription schedule planner, medicine timing app, medication reminder tool, drug timing calculator, medication management, pill schedule optimizer, medication adherence, prescription timing, when to take medication, dose spacing calculator, drug timing optimization, medication effectiveness, medication schedule planner, drug dosage calculator, pill reminder, medication management tool, travel medication calculator
+
+
+
+

@@ -10,17 +10,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function showResults(times) {
     const timesDiv = document.getElementById('times');
-    const timeItems = times.map((time, index) => 
-        `<li class="time-item" style="animation-delay: ${index * 0.1}s">${time}</li>`
-    ).join('');
+    
+    // Store times globally for editing
+    window.currentTimes = times.map(time => parseTime(time.split(': ')[1]));
+    
+    const timeInputs = window.currentTimes.map((time, index) => {
+        const formattedTime = formatTime(time);
+        return `
+            <div class="direct-edit-group">
+                <label>Dose ${index + 1}</label>
+                <input type="time" id="direct-time-${index}" value="${formattedTime}" class="direct-time-input" onchange="updateTime(${index})">
+            </div>
+        `;
+    }).join('');
     
     timesDiv.innerHTML = `
         <div class="results-header">
             <span>💡 Based on your schedule, recommended medication times:</span>
+            <small class="edit-hint">✏️ Click on any time to adjust</small>
         </div>
-        <ul class="time-list">
-            ${timeItems}
-        </ul>
+        <div class="direct-edit-container">
+            ${timeInputs}
+        </div>
         <div class="results-footer">
             <small>⚠️ Always follow medical advice. Consult your doctor if you have questions</small>
         </div>
@@ -142,6 +153,14 @@ function showError(message) {
         const hours = Math.floor(minutes / 60) % 24;
         const mins = minutes % 60;
         return `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}`;
+    }
+    
+    function updateTime(index) {
+        const newTime = document.getElementById(`direct-time-${index}`).value;
+        if (newTime) {
+            window.currentTimes[index] = parseTime(newTime);
+            console.log(`Dose ${index + 1} updated to: ${newTime}`);
+        }
     }
     
     // Add keyboard event listeners
