@@ -65,26 +65,52 @@ function showError(message) {
                 }
                 
                 let times = [];
-                const delta = 60;
-
-                if (doses === 1) {
-                    times.push(addMinutes(wakeUp, delta));
+                
+                if (doses <= 3) {
+                    // For 1-3 doses: schedule around meal times (30-60 min after meals)
+                    const mealTimes = [];
+                    
+                    // Calculate typical meal times based on wake-up and bedtime
+                    const breakfastTime = addMinutes(wakeUp, 60); // 1 hour after waking
+                    const lunchTime = addMinutes(wakeUp, 300); // 5 hours after waking (around noon)
+                    const dinnerTime = addMinutes(bed, -180); // 3 hours before bedtime
+                    
+                    mealTimes.push(breakfastTime, lunchTime, dinnerTime);
+                    
+                    // Filter meal times to ensure they're within waking hours
+                    const validMealTimes = mealTimes.filter(time => 
+                        time >= addMinutes(wakeUp, 30) && time <= addMinutes(bed, -30)
+                    );
+                    
+                    if (doses === 1) {
+                        // Single dose: prefer lunch time
+                        // times.push(validMealTimes[1] || validMealTimes[0]);
+                        // Single dose: prefer breakfast time
+                        times.push(validMealTimes[0])
+                    } else if (doses === 2) {
+                        // Two doses: breakfast and dinner times
+                        times.push(validMealTimes[0], validMealTimes[2] || validMealTimes[1]);
+                    } else if (doses === 3) {
+                        // Three doses: breakfast, lunch, dinner
+                        times = validMealTimes.slice(0, 3);
+                    }
+                    
+                    // Ensure all times are 30-60 minutes after meals
+                    times = times.map(time => addMinutes(time, 45)); // 45 min after meals
+                    
                 } else {
-                    const firstDoseTime = addMinutes(wakeUp, delta);
-                    const lastDoseTime = addMinutes(bed, -delta);
+                    // For 4+ doses: use original interval-based scheduling
+                    const firstDoseTime = addMinutes(wakeUp, 30);
+                    const lastDoseTime = addMinutes(bed, -30);
                     
                     if (lastDoseTime - firstDoseTime < 30 * (doses - 1)) {
                         showError('Too many doses for this schedule. Reduce doses or adjust times');
                         return;
                     }
                     
-                    if (doses === 2) {
-                        times.push(firstDoseTime, lastDoseTime);
-                    } else {
-                        const interval = (lastDoseTime - firstDoseTime) / (doses - 1);
-                        for (let i = 0; i < doses; i++) {
-                            times.push(addMinutes(firstDoseTime, Math.round(i * interval)));
-                        }
+                    const interval = (lastDoseTime - firstDoseTime) / (doses - 1);
+                    for (let i = 0; i < doses; i++) {
+                        times.push(addMinutes(firstDoseTime, Math.round(i * interval)));
                     }
                 }
                 
