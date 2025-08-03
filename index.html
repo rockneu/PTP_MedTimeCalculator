@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Medication time calculator - helps you schedule your medication times evenly throughout the day">
-    <meta name="keywords" content="medication, medicine, time, calculator, schedule, reminder">
-    <title>Medication Time Calculator</title>
+    <title>Smart Medication Schedule Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Medication Time Calculator</h1>
+        <header>
+            <h1>💊 Smart Medication Schedule Calculator</h1>
+            <p class="subtitle">Schedule your medications scientifically</p>
+        </header>
         
-        <div class="input-section">
-            <div class="time-input-row">
-                <div class="time-input-group">
-                    <label for="wake-up">Wake-up Time:</label>
-                    <input type="time" id="wake-up" value="07:00">
+        <main>
+            <section class="input-section">
+                <h2>📅 Set Your Daily Schedule</h2>
+                <div class="time-input-row">
+                    <div class="time-input-group">
+                        <label for="wake-up">Wake-up Time</label>
+                        <input type="time" id="wake-up" value="07:00">
+                        <small>Take first dose 30 minutes after waking</small>
+                    </div>
+                    <div class="time-input-group">
+                        <label for="bedtime">Bedtime</label>
+                        <input type="time" id="bedtime" value="22:00">
+                        <small>Last dose 30 minutes before sleep</small>
+                    </div>
                 </div>
-                <div class="time-input-group">
-                    <label for="bedtime">Bed Time:</label>
-                    <input type="time" id="bedtime" value="22:00">
-                </div>
-            </div>
-            
-            <div class="input-group">
-                <label for="doses">Number of doses:</label>
-                <div class="doses-input">
+                
+                <div class="input-group doses-input">
+                    <label for="doses-select">Daily Medication Doses</label>
                     <select id="doses-select">
-                        <option value="1">1</option>
-                        <option value="2" selected>2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="1">1 dose</option>
+                        <option value="2" selected>2 doses</option>
+                        <option value="3">3 doses</option>
+                        <option value="4">4 doses</option>
+                        <option value="5">5 doses</option>
+                        <option value="6">6 doses</option>
+                        <option value="7">7 doses</option>
+                        <option value="8">8 doses</option>
+                        <option value="9">9 doses</option>
+                        <option value="10">10 doses</option>
                     </select>
                 </div>
-            </div>
+                
+                <button id="calculate" class="calculate-btn">
+                    <span>✨ Calculate Schedule</span>
+                </button>
+            </section>
             
-            <button id="calculate">Calculate Times</button>
-        </div>
+            <section class="results-section" id="results">
+                <h2>⏰ Recommended Medication Times</h2>
+                <div id="times">
+                    <p class="placeholder">Please set your schedule and medication doses</p>
+                </div>
+            </section>
+        </main>
         
-        <div class="results-section" id="results">
-            <h2>Suggested Medication Times:</h2>
-            <div id="times"></div>
-        </div>
+        <footer class="disclaimer">
+            <div class="disclaimer-content">
+                <p><strong>⚠️ Medical Disclaimer:</strong> This calculator provides medication timing suggestions based on your daily schedule. However, <strong>always follow your doctor's specific instructions</strong> for medication timing and dosage. These recommendations are for reference only and should not replace professional medical advice. Consult your healthcare provider if you have any questions or concerns about your medication schedule.</p>
+            </div>
+        </footer>
     </div>
     
     <script src="javascript.js"></script>
