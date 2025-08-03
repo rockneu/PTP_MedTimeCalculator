@@ -31,10 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // After breakfast (1 hour after wake-up)
             times.push(addMinutes(wakeUp, 60));
         } else {
-            // For 2+ doses, distribute evenly
-            const interval = totalMinutes / (doses - 1);
-            for (let i = 0; i < doses; i++) {
-                times.push(addMinutes(wakeUp, Math.floor(i * interval)));
+            // For 2+ doses, adjusted timing
+            const firstDoseTime = addMinutes(wakeUp, 30);  // 30 min after wake-up
+            const lastDoseTime = addMinutes(bed, -30);     // 30 min before bedtime
+
+            if (doses === 2) {
+                times.push(firstDoseTime, lastDoseTime);
+            } else {
+                const interval = (lastDoseTime - firstDoseTime) / (doses - 1);
+                for (let i = 0; i < doses; i++) {
+                    times.push(addMinutes(firstDoseTime, Math.round(i * interval)));
+                }
             }
         }
         
