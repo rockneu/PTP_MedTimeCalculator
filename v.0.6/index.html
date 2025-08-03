@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medication Timer</h1>
+
+        <div class="input-section">
+            <label for="wakeUpTime">Wake-up Time:</label>
+            <input type="time" id="wakeUpTime" value="07:00">
+
+            <label for="bedTime">Bed Time:</label>
+            <input type="time" id="bedTime" value="22:00">
+
+            <label for="medicationCount">Medication Count:</label>
+            <input type="number" id="medicationCount" value="2" min="1">
+        </div>
+
+        <button id="calculateButton">Calculate Times</button>
+
+        <div class="output-section">
+            <h2>Medication Times:</h2>
+            <ul id="medicationTimes">
+                <!-- Medication times will be displayed here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

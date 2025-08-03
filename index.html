@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medication time calculator - helps you schedule your medication times evenly throughout the day">
+    <meta name="keywords" content="medication, medicine, time, calculator, schedule, reminder">
+    <title>Medication Time Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medication Time Calculator</h1>
+        
+        <div class="input-section">
+            <div class="input-group time-range">
+                <label for="wake-up">Wake-up Time:</label>
+                <input type="time" id="wake-up" value="07:00">
+                <label for="bedtime">Bed Time:</label>
+                <input type="time" id="bedtime" value="22:00">
+            </div>
+            
+            <div class="input-group">
+                <label for="doses">Number of doses:</label>
+                <div class="doses-input">
+                    <select id="doses-select">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="calculate">Calculate Times</button>
+        </div>
+        
+        <div class="results-section" id="results">
+            <h2>Suggested Medication Times:</h2>
+            <div id="times"></div>
+        </div>
+    </div>
+    
+    <script src="javascript.js"></script>
+</body>
+</html>
