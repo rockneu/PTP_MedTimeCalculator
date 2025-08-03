@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     margin: 0;
-    padding: 20px;
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,9 +12,9 @@ body {
 
 .container {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
@@ -27,8 +27,8 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .input-section {
@@ -49,8 +49,8 @@ h1 {
 .time-input-row {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .time-input-group {
@@ -62,7 +62,7 @@ h1 {
 
 .time-input-group label {
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 0.85rem;
     color: #6c757d;
 }
 
@@ -75,6 +75,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 1rem;
 }
 
 #doses-input {
@@ -101,12 +102,12 @@ label {
 }
 
 input[type="time"], select {
-    padding: 12px;
+    padding: 0.6rem;
     border: 2px solid #e9ecef;
     border-radius: 8px;
     width: 200px;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.9rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -140,17 +141,17 @@ button:active {
 }
 
 .results-section {
-    margin-top: 30px;
+    margin-top: 1.5rem;
     background: white;
-    padding: 30px;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .results-section h2 {
     color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
@@ -191,15 +192,15 @@ header {
 
 .subtitle {
     color: #6c757d;
-    font-size: 16px;
+    font-size: 0.9rem;
     margin-top: -10px;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .input-section h2 {
     color: #495057;
-    font-size: 20px;
-    margin-bottom: 25px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
@@ -210,7 +211,7 @@ header {
 }
 
 .calculate-btn {
-    margin-top: 25px;
+    margin-top: 1rem;
 }
 
 .loading {
@@ -301,17 +302,17 @@ input.filled, select.filled {
 }
 
 .disclaimer {
-    margin-top: 2rem;
-    padding: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
     background: linear-gradient(135deg, #fff5f5, #fffbf0);
-    border-left: 4px solid #ff6b6b;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+    border-left: 3px solid #ff6b6b;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(255, 107, 107, 0.1);
 }
 
 .disclaimer-content {
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 0.8rem;
+    line-height: 1.5;
     color: #2d3748;
 }
 

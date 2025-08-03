@@ -65,12 +65,13 @@ function showError(message) {
                 }
                 
                 let times = [];
-                
+                const delta = 60;
+
                 if (doses === 1) {
-                    times.push(addMinutes(wakeUp, 60));
+                    times.push(addMinutes(wakeUp, delta));
                 } else {
-                    const firstDoseTime = addMinutes(wakeUp, 30);
-                    const lastDoseTime = addMinutes(bed, -30);
+                    const firstDoseTime = addMinutes(wakeUp, delta);
+                    const lastDoseTime = addMinutes(bed, -delta);
                     
                     if (lastDoseTime - firstDoseTime < 30 * (doses - 1)) {
                         showError('Too many doses for this schedule. Reduce doses or adjust times');
