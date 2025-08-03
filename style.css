@@ -35,14 +35,26 @@ h1, h2 {
     align-items: center;
 }
 
-.time-range {
+.time-input-row {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
 }
 
-.time-separator {
-    margin: 0 5px;
+.time-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-input-group label {
+    margin-bottom: 0;
+}
+
+.time-input-group input {
+    margin-bottom: 0;
 }
 
 .doses-input {
