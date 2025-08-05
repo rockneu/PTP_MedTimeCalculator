@@ -17,5 +17,9 @@ to-do list
 ## market side
 - domain name purchase
 - backlink building
+
+## user side
 - site access info
-- user feedback
+- pdf printing
+- user feedback email
+
