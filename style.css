@@ -431,6 +431,24 @@ input.filled, select.filled {
     color: #e53e3e;
 }
 
+.feedback-link {
+    margin-top: 1rem !important;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.feedback-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.feedback-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .disclaimer {
         margin: 1rem;
