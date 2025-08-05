@@ -84,7 +84,7 @@ function showError(message) {
                     // Calculate typical meal times based on wake-up and bedtime
                     const breakfastTime = addMinutes(wakeUp, 60); // 1 hour after waking
                     const lunchTime = addMinutes(wakeUp, 300); // 5 hours after waking (around noon)
-                    const dinnerTime = addMinutes(bed, -180); // 3 hours before bedtime
+                    const dinnerTime = addMinutes(bed, -180); // 3 hours before bedtime - ensuring last dose is at least 3 hours before bed
                     
                     mealTimes.push(breakfastTime, lunchTime, dinnerTime);
                     
@@ -93,21 +93,32 @@ function showError(message) {
                         time >= addMinutes(wakeUp, 30) && time <= addMinutes(bed, -30)
                     );
                     
+                    // First dose: exactly 1 hour after waking up
+                    const firstDoseTime = addMinutes(wakeUp, 60);
+                    
                     if (doses === 1) {
-                        // Single dose: prefer lunch time
-                        // times.push(validMealTimes[1] || validMealTimes[0]);
-                        // Single dose: prefer breakfast time
-                        times.push(validMealTimes[0])
+                        // Single dose: exactly 1 hour after waking
+                        times.push(firstDoseTime);
                     } else if (doses === 2) {
-                        // Two doses: breakfast and dinner times
-                        times.push(validMealTimes[0], validMealTimes[2] || validMealTimes[1]);
+                        // Two doses: first at 1 hour after waking, second at dinner time
+                        //times.push(firstDoseTime, validMealTimes[2] || validMealTimes[1]);
+                        const lastDoseTime = addMinutes(bed, -180);
+                        times.push(firstDoseTime, lastDoseTime);
+                        // alert(times)
                     } else if (doses === 3) {
-                        // Three doses: breakfast, lunch, dinner
-                        times = validMealTimes.slice(0, 3);
+                        // Three doses: first at 1 hour after waking, then lunch and dinner
+                        //times = [firstDoseTime, validMealTimes[1], validMealTimes[2]];
+                        const lastDoseTime = addMinutes(bed, -180);
+                        times = [firstDoseTime, validMealTimes[1], lastDoseTime];
+                        // alert(times)
                     }
                     
-                    // Ensure all times are 30-60 minutes after meals
-                    times = times.map(time => addMinutes(time, 45)); // 45 min after meals
+                    // For 2+ doses, ensure all times after first are 30-60 minutes after meals
+                    if (doses > 1) {
+                        times = times.map((time, index) => 
+                            index === 0 ? time : addMinutes(time, 45) // 45 min after meals for non-first doses
+                        );
+                    }
                     
                 } else {
                     // For 4+ doses: use original interval-based scheduling
@@ -125,8 +136,10 @@ function showError(message) {
                     }
                 }
                 
+                // alert('before formatting' + times)
                 times = times.map(time => roundToNearestHalfHour(time));
                 const formattedTimes = times.map((time, index) => `Dose ${index + 1}: ${formatTime(time)}`);
+                // alert('after formatting' + times + '---' + formattedTimes)
                 showResults(formattedTimes);
                 
             } catch (error) {
@@ -145,8 +158,8 @@ function showError(message) {
     }
     
     function roundToNearestHalfHour(minutes) {
-        const remainder = minutes % 30;
-        return remainder < 15 ? minutes - remainder : minutes + (30 - remainder);
+        // Always round down (earlier) to nearest half hour
+        return Math.floor(minutes / 30) * 30;
     }
     
     function formatTime(minutes) {
