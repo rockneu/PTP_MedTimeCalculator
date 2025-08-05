@@ -21,10 +21,6 @@
 
 
 
-
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYwKRSSAYTcxeXC7ywqmWQBYUFpsMiVvI"  -H 'Content-Type: application/json'  -X POST -d '{    "contents": [   {  "parts": [   {   "text": "Explain how AI works in a few words"   }   ]  }  ]  }'
-  
-  
 netsh winhttp set proxy proxy-server="http=127.0.0.1:2081"  
 
 netsh winhttp reset proxy
@@ -32,12 +28,9 @@ netsh winhttp reset proxy
 curl -x http://127.0.0.1:2081  "https://www.youtube.com"
 
 
-curl -x http://127.0.0.1:2081  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYwKRSSAYTcxeXC7ywqmWQBYUFpsMiVvI"  -H 'Content-Type: application/json'  -X POST -d '{    "contents": [   {  "parts": [   {   "text": "Explain how AI works in a few words"   }   ]  }  ]  }'
 
 
 
-set ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
-set ANTHROPIC_AUTH_TOKEN=99ec0816e3ea430fbafa183956444ce2.uXyZy5eYV20gGyX2
 
 
 
