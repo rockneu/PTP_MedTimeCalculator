@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://medication-schedule-calculator.com/sitemap.xml
+Sitemap: https://www.meditimecalculator.top/sitemap.xml
 
 # Crawl delay for bots
 Crawl-delay: 1

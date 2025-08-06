@@ -10,9 +10,8 @@ to-do list
 ## tech side
 - site development
 - testing
-- deployment on cloudflare
-- domain name mngt  
-
+- deployment on cloudflare -- done
+- domain name mngt  -- done
 
 ## market side
 - domain name purchase
@@ -21,5 +20,5 @@ to-do list
 ## user side
 - site access info
 - pdf printing
-- user feedback email
+- user feedback email -- done
 
